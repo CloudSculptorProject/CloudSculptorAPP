@@ -723,10 +723,10 @@ p {
 	}
 
 	#about .about .col-left .about-img::after {
-		left: -45px;
-		top: 34px;
-		height: 98%;
-		width: 98%;
+		left: -19px;
+		top: -20px;
+		height: 105%;
+		width: 106%;
 		border: 10px solid crimson;
 	}
 
