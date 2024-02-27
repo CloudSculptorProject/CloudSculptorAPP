@@ -72,6 +72,22 @@ p {
 	background-color: crimson;
 }
 
+.brand {
+	display: flex;
+	align-items: center;
+}
+
+.brand a {
+	display: flex;
+	align-items: center;
+}
+
+.brand img {
+	height: 7rem;
+	width: auto;
+	margin-right: 3rem;
+}
+
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
@@ -819,5 +835,7 @@ p {
 		margin: 1.5%;
 	}
 }
+
+/*brand*/
 
 /* End  Media Query For Desktop */
