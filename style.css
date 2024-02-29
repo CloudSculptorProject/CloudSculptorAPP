@@ -98,6 +98,7 @@ p {
 	color: crimson;
 }
 
+
 /* Header section */
 #header {
 	position: fixed;
@@ -585,6 +586,11 @@ p {
 	font-weight: 500;
 }
 
+#contact img {
+	width: 50%;
+	align-items: center;
+}
+
 /*End contact Section */
 
 /* Footer */
@@ -657,7 +663,7 @@ p {
 }
 
 #andres-qr {
-	margin-left: 270%;
+	margin-left: 500px;
 }
 
 /* End Footer */
@@ -784,45 +790,82 @@ p {
 
 	/* End About */
 
-	/* contact  */
+	/* contact Section */
 	#contact .contact {
 		flex-direction: column;
-		padding: 100px 0;
-		align-items: center;
-		justify-content: center;
-		min-width: 20vh;
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 90%;
 	}
 
 	#contact .contact-items {
 		width: 100%;
 		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		margin: 0;
+		justify-content: space-between;
 	}
 
 	#contact .contact-item {
-		width: 30%;
-		margin: 0;
-		flex-direction: row;
+		width: 48%;
+		padding: 20px;
+		text-align: center;
+		border-radius: 10px;
+		margin: 20px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		box-shadow: 0px 0px 18px 0 #0000002c;
+		transition: 0.3s ease box-shadow;
 	}
 
-	#contact .contact-item .icon {
-		height: 100px;
-		width: 100px;
+	#contact .contact-item:hover {
+		box-shadow: 0px 0px 5px 0 #0000002c;
 	}
 
-	#contact .contact-item .icon img {
-		object-fit: contain;
+	#contact .qr-code {
+		width: 200px;
+		height: 200px;
+		margin-bottom: 15px;
 	}
 
-	#contact .contact-item .contact-info {
-		width: 100%;
-		text-align: left;
-		padding-left: 20px;
+	#contact .contact-info h1 {
+		font-size: 2.7rem;
+		font-weight: 500;
+		margin-bottom: 5px;
 	}
 
-	/* End contact  */
+	#contact .contact-info h2 {
+		font-size: 1.6rem;
+		line-height: 1.8rem;
+		font-weight: 400;
+		margin-bottom: 8px;
+	}
+
+	#contact .grande {
+		font-size: 1.6rem;
+		color: #3498db;
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	#contact img {
+		width: 50%;
+		align-items: center;
+	}
+
+	#contact .contact-info a {
+		color: crimson;
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	/* Estilo específico para los nombres indicados */
+	#contact .contact-info .name-red {
+		color: crimson;
+		font-weight: 500;
+	}
+
+	/* End contact Section */
 }
 
 /* End Media Query For Tablet */
