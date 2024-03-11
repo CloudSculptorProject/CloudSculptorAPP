@@ -15,7 +15,7 @@ spec:
         pushgateway:
           enabled: false
   destination:
-    server: https://kubernetes.default.svc
+    server: https://aks01-dns-gul8e4b6.hcp.eastus.azmk8s.io:443
     namespace: default
   syncPolicy:
     automated:
