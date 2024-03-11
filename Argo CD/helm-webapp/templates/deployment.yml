@@ -1,33 +1,18 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
-  name: {{ .Values.appName }}
-  labels:
-    app: {{ .Values.appName }}
+  name: root-app
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
-  replicas: {{ .Values.replicas }}
-  selector:
-    matchLabels:
-      app: {{ .Values.appName }}
-      tier: frontend
-  template:
-    metadata:
-      labels:
-        app: {{ .Values.appName }}
-        tier: frontend
-    spec: # Pod spec
-      containers:
-      - name: mycontainer
-        image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
-        ports:
-        - containerPort: 80
-        envFrom:
-        - configMapRef:
-            name: {{ .Values.configmap.name }}
-        resources:
-          requests:
-            memory: "16Mi" 
-            cpu: "50m"    # 500milliCPUs (1/2 CPU)
-          limits:
-            memory: "128Mi"
-            cpu: "100m"
+  project: default
+  source:
+    repoURL: https://github.com/CloudSculptorProject/CloudSculptorAPP.git
+    path: CloudSculptorAPP/Argo CD/helm-webapp/templates
+    targetRevision: HEAD
+  destination:
+    server: https://aks01-dns-gul8e4b6.hcp.eastus.azmk8s.io:443
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
