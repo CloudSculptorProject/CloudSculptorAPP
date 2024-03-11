@@ -1,18 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  name: myapp
 spec:
   project: default
   source:
-    repoURL: https://github.com/CloudSculptorProject/CloudSculptorAPP.git
-    path: CloudSculptorAPP/Argo CD/helm-webapp/templates
-    targetRevision: HEAD
+    repoURL: hhttps://github.com/CloudSculptorProject/CloudSculptorAPP.git
+    targetRevision: main
+    path: /charts/
+    helm:
+      values: |
+        replicaCount: 2
+        service:
+          port: 8081
+          targetPort: 8081
   destination:
     server: https://aks01-dns-gul8e4b6.hcp.eastus.azmk8s.io:443
     namespace: default
   syncPolicy:
-    automated:
-      selfHeal: true
+    automated: {}
