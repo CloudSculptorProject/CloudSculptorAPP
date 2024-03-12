@@ -18,4 +18,4 @@ jobs:
 
       - name: Sync with Argo CD
         run: |
-          argocd app sync <your-application-name> --prune
+          argocd app sync cloudsculptorapp --prune
