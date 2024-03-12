@@ -1,0 +1,21 @@
+name: Sync with Argo CD
+
+on:
+  push:
+    branches:
+      - main  # Ajusta esto según la rama que desees monitorear
+
+jobs:
+  argo_sync:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v1
+
+      - name: Sync with Argo CD
+        run: |
+          argocd app sync <your-application-name> --prune
