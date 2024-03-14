@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app1
+  namespace: default
+spec:
+  destination:
+    server: 'https://github.com/CloudSculptorProject/CloudSculptorAPP'
+    namespace: default
+  project: default
+  source:
+    repoURL: 'https://github.com/CloudSculptorProject/CloudSculptorAPP.git'
+    path: my-app1
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
