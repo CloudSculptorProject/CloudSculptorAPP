@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   destination:
-    server: 'https://github.com/CloudSculptorProject/CloudSculptorAPP'
+    server: 'https://aks01-dns-isxc8mbx.hcp.eastus.azmk8s.io:443'
     namespace: default
   project: default
   source:
