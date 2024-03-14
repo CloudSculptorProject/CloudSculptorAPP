@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: hello-bye
   labels:
-    app: hello-world
+    app: hello-bye
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-world
+      app: hello-bye
   template:
     metadata:
       labels:
-        app: hello-world
+        app: hello-bye
     spec:
       containers:
       - name: nginx
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: hello-bye
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: hello-world
+    app: hello-bye
